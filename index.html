@@ -4,189 +4,176 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detalles del Corazón 🩷</title>
-  <style>
-    <script>
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('nav-menu');
 
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-  });
-</script>
-  
+  <style>
+    /* ===== BASE ===== */
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(180deg, #fff5f8, #ffffff);
       color: #333;
     }
-    header {
-      padding: 40px 20px;
-      text-align: center;
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
-    header h1 {
-      font-size: 2.5rem;
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ===== LOGO / MARCA ===== */
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+    }
+
+    .brand-group {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand {
+      font-size: 2rem;
+      font-weight: 800;
       color: #e84a7f;
-      margin-bottom: 10px;
     }
-    header p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto;
+
+    .slogan {
+      font-size: 0.8rem;
+      color: #999;
     }
+
+    /* ===== MENU ===== */
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu li a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-menu li a:hover {
+      color: #e84a7f;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #e84a7f;
+    }
+
+    /* ===== PACKAGES ===== */
     .packages {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      padding: 40px 20px;
+      padding: 50px 20px;
       max-width: 1100px;
       margin: auto;
     }
+
     .card {
       background: #fff;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      padding: 25px;
+      padding: 30px 25px;
       text-align: center;
     }
+
     .card h2 {
       color: #e84a7f;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
+
     .card ul {
       text-align: left;
       padding-left: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
+
     .btn {
       display: inline-block;
-      padding: 12px 25px;
+      padding: 12px 28px;
       background: #e84a7f;
       color: #fff;
       border-radius: 30px;
-      text-decoration: none;
       font-weight: 600;
     }
+
     footer {
       text-align: center;
       padding: 30px 20px;
       font-size: 0.9rem;
       color: #777;
     }
-    /* ===== NAV / HEADER ===== */
-.header {
-  position: sticky;
-  top: 0;
-  background: #ffffff;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-}
 
-.navbar {
-  max-width: 1200px;
-  margin: auto;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 110px;
-}
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
 
-/* ===== LOGO + MARCA ===== */
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 25px 0;
+        display: none;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      }
 
-.logo {
-  width: 130px;
-  height: 130px;
-  object-fit: contain;
-}
+      .nav-menu.active { display: flex; }
 
-.brand {
-  font-size: 2.4rem;
-  font-weight: 800;
-  color: #e84a7f;
-  letter-spacing: 0.8px;
-}
-
-/* ===== MENU ===== */
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.nav-menu li a {
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  opacity: 0.85;
-}
-
-.nav-menu li a:hover {
-  color: #e84a7f;
-}
-
-/* ===== MOBILE ===== */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-menu {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    width: 100%;
-    display: none;
-    padding: 20px 0;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .nav-menu li {
-    text-align: center;
-    margin: 10px 0;
-  }
-}
-    .brand-group {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.slogan {
-  font-size: 0.85rem;
-  color: #999;
-  margin-top: 4px;
-}
+      .logo { width: 60px; height: 60px; }
+      .brand { font-size: 1.4rem; }
+      .slogan { font-size: 0.7rem; }
+    }
   </style>
 </head>
-  <script src="script.js"></script>
+
 <body>
 
 <header class="header">
   <nav class="navbar">
+
     <div class="nav-left">
       <img src="img/logo.png" alt="Detalles del Corazón" class="logo" />
       <div class="brand-group">
-    <span class="brand">Detalles del Corazón</span>
-    <small class="slogan">Momentos que hablan por ti</small>
-  </div>
+        <span class="brand">Detalles del Corazón</span>
+        <small class="slogan">Momentos que hablan por ti</small>
+      </div>
     </div>
 
     <div class="menu-toggle" id="menu-toggle">☰</div>
@@ -198,6 +185,7 @@
       <li><a href="#paquetes">Paquetes</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
+
   </nav>
 </header>
 
@@ -230,6 +218,15 @@
 <footer>
   © 2026 Detalles del Corazón 🩷 · Momentos que hablan por ti
 </footer>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('nav-menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
 
 </body>
 </html>
