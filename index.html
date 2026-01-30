@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #fff5f8, #ffffff);
+      background: #fff5f8;
       color: #333;
     }
 
@@ -20,21 +20,21 @@
     .header {
       position: sticky;
       top: 0;
-      background: #fff;
+      background: #ffffffee;
+      backdrop-filter: blur(6px);
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     }
 
     .navbar {
       max-width: 1200px;
       margin: auto;
-      padding: 15px 20px;
+      padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    /* ===== LOGO / MARCA ===== */
     .nav-left {
       display: flex;
       align-items: center;
@@ -42,8 +42,8 @@
     }
 
     .logo {
-      width: 90px;
-      height: 90px;
+      width: 80px;
+      height: 80px;
       object-fit: contain;
     }
 
@@ -54,33 +54,36 @@
     }
 
     .brand {
-      font-size: 2rem;
+      font-size: 1.9rem;
       font-weight: 800;
       color: #e84a7f;
     }
 
     .slogan {
-      font-size: 0.8rem;
-      color: #999;
+      font-size: 0.85rem;
+      color: #888;
     }
 
     /* ===== MENU ===== */
     .nav-menu {
       list-style: none;
       display: flex;
-      gap: 24px;
+      gap: 28px;
       margin: 0;
       padding: 0;
     }
 
     .nav-menu li a {
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: 0.85rem;
+      font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
     }
 
     .nav-menu li a:hover {
+      border-color: #e84a7f;
       color: #e84a7f;
     }
 
@@ -91,38 +94,84 @@
       color: #e84a7f;
     }
 
-    /* ===== PACKAGES ===== */
-    .packages {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 50px 20px;
+    /* ===== SECTIONS ===== */
+    .section {
+      padding: 90px 20px;
+      background: #ffffff;
+    }
+
+    .section.alt {
+      background: #fff0f5;
+    }
+
+    .section-inner {
       max-width: 1100px;
       margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .section-text h2 {
+      font-size: 2.4rem;
+      color: #e84a7f;
+      margin-bottom: 14px;
+    }
+
+    .section-text p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .section-visual {
+      background: linear-gradient(135deg, #ffe3ec, #fff);
+      border-radius: 28px;
+      padding: 40px;
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+
+    /* ===== PACKAGES ===== */
+    .packages {
+      padding: 90px 20px;
+      background: #fff;
+    }
+
+    .packages-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
     }
 
     .card {
       background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      padding: 30px 25px;
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      padding: 36px 28px;
       text-align: center;
     }
 
-    .card h2 {
+    .card h3 {
       color: #e84a7f;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
     }
 
     .card ul {
       text-align: left;
-      padding-left: 20px;
-      margin-bottom: 25px;
+      padding-left: 18px;
+      margin-bottom: 26px;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 28px;
+      padding: 14px 32px;
       background: #e84a7f;
       color: #fff;
       border-radius: 30px;
@@ -131,9 +180,10 @@
 
     footer {
       text-align: center;
-      padding: 30px 20px;
+      padding: 40px 20px;
       font-size: 0.9rem;
       color: #777;
+      background: #fff0f5;
     }
 
     /* ===== MOBILE ===== */
@@ -148,17 +198,16 @@
         background: #fff;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
-        padding: 25px 0;
+        gap: 22px;
+        padding: 28px 0;
         display: none;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
       }
 
       .nav-menu.active { display: flex; }
 
       .logo { width: 60px; height: 60px; }
       .brand { font-size: 1.4rem; }
-      .slogan { font-size: 0.7rem; }
     }
   </style>
 </head>
@@ -167,7 +216,6 @@
 
 <header class="header">
   <nav class="navbar">
-
     <div class="nav-left">
       <img src="img/logo.png" alt="Detalles del Corazón" class="logo" />
       <div class="brand-group">
@@ -180,66 +228,78 @@
 
     <ul class="nav-menu" id="nav-menu">
       <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#mision">Misión & Visión</a></li>
+      <li><a href="#mision">Misión</a></li>
+      <li><a href="#vision">Visión</a></li>
       <li><a href="#quienes">Quiénes somos</a></li>
       <li><a href="#paquetes">Paquetes</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-
   </nav>
 </header>
 
+<section id="inicio" class="section alt">
+  <div class="section-inner">
+    <div class="section-text">
+      <h2>Detalles que se sienten</h2>
+      <p>Creamos experiencias digitales y emocionales pensadas para sorprender, conectar y quedarse en el corazón.</p>
+    </div>
+    <div class="section-visual">💖</div>
+  </div>
+</section>
+
 <section id="mision" class="section">
-  <div class="section-card">
-    <h2>🌸 Misión</h2>
-    <p>Diseñar experiencias emocionales que conecten corazones y conviertan historias reales en recuerdos inolvidables.</p>
-  </div>
-  <div class="section-card">
-    <h2>✨ Visión</h2>
-    <p>Ser la marca líder en experiencias personalizadas que se sienten, se recuerdan y se comparten.</p>
-  </div>
-</section>
-
-<section id="quienes" class="section single">
-  <div class="section-card">
-    <h2>💖 Quiénes somos</h2>
-    <p>Detalles del Corazón nace del deseo de expresar lo que a veces las palabras no alcanzan. Transformamos emociones en detalles digitales y físicos, pensados con intención, cuidado y cariño.</p>
+  <div class="section-inner">
+    <div class="section-text">
+      <h2>Nuestra misión</h2>
+      <p>Diseñar experiencias emocionales que conecten personas y transformen historias reales en recuerdos inolvidables.</p>
+    </div>
+    <div class="section-visual">🌸</div>
   </div>
 </section>
 
-<section id="inicio" class="packages">
-
-  <div class="card">
-    <h2>💖 Álbum Digital (HIT)</h2>
-    <ul>
-      <li>Sube 1 foto especial</li>
-      <li>Escribe un mensaje desde el corazón</li>
-      <li>Firma con tu nombre</li>
-      <li>Link único para compartir</li>
-      <li>Página privada tipo sorpresa</li>
-    </ul>
-    <a href="album-form.html" class="btn">Crear mi Álbum</a>
+<section id="vision" class="section alt">
+  <div class="section-inner">
+    <div class="section-text">
+      <h2>Nuestra visión</h2>
+      <p>Convertirnos en la marca referente de detalles personalizados que se viven, se recuerdan y se comparten.</p>
+    </div>
+    <div class="section-visual">✨</div>
   </div>
-
-  <div class="card">
-    <h2>💌 Carta Digital</h2>
-    <ul>
-      <li>Carta personalizada</li>
-      <li>Diseño romántico</li>
-      <li>Entrega por link</li>
-    </ul>
-    <a href="#" class="btn">Próximamente</a>
-  </div>
-
 </section>
 
-<section id="contacto" class="section single">
-  <div class="section-card center">
-    <h2>📩 Contacto</h2>
-    <p>¿Listo para crear un detalle especial?</p>
-    <p>Escríbenos y diseñamos tu experiencia.</p>
-    <p><strong>detallesdelcorazon@gmail.com</strong></p>
-    <a href="mailto:detallesdelcorazon@gmail.com" class="btn">Escríbenos</a>
+<section id="quienes" class="section">
+  <div class="section-inner">
+    <div class="section-text">
+      <h2>Quiénes somos</h2>
+      <p>Somos un proyecto creativo que cree que los detalles importan. Transformamos emociones en experiencias cuidadas, auténticas y memorables.</p>
+    </div>
+    <div class="section-visual">🤍</div>
+  </div>
+</section>
+
+<section id="paquetes" class="packages">
+  <div class="packages-grid">
+    <div class="card">
+      <h3>💖 Álbum Digital</h3>
+      <ul>
+        <li>Sube una foto especial</li>
+        <li>Mensaje personalizado</li>
+        <li>Firma con tu nombre</li>
+        <li>Link único</li>
+      </ul>
+      <a href="album-form.html" class="btn">Crear mi recuerdo</a>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="section alt">
+  <div class="section-inner">
+    <div class="section-text">
+      <h2>Contacto</h2>
+      <p>¿Listo para crear un detalle especial? Escríbenos y diseñamos tu experiencia.</p>
+      <a href="mailto:detallesdelcorazon@gmail.com" class="btn">Escríbenos</a>
+    </div>
+    <div class="section-visual">📩</div>
   </div>
 </section>
 
