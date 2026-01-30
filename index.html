@@ -2,58 +2,120 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detalles del Corazón 🩷</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #fff5f8, #ffffff);
+      color: #333;
+    }
+    header {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #e84a7f;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      padding: 25px;
+      text-align: center;
+    }
+    .card h2 {
+      color: #e84a7f;
+      margin-bottom: 10px;
+    }
+    .card ul {
+      text-align: left;
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #e84a7f;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- MENÚ PRINCIPAL -->
-  <header class="header">
-    <nav class="navbar">
-      <a href="#inicio" class="logo">
-        <!-- Aquí va tu logo -->
-        <img src="logo.png" alt="Detalles del Corazón Logo" />
-      </a>
-      <ul class="nav-menu">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#mision">Misión - Visión</a></li>
-        <li><a href="#quienes">Quiénes somos</a></li>
-        <li><a href="#paquetes">Paquetes</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="header">
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="img/logo.png" alt="Detalles del Corazón" class="logo" />
+      <span class="brand">Detalles del Corazón</span>
+    </div>
 
-  <!-- SECCIONES -->
-  <section id="inicio" class="section hero">
-    <h1>Detalles del Corazón 🩷</h1>
-    <p>Diseñamos experiencias que se sienten.</p>
-  </section>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
 
-  <section id="mision" class="section">
-    <h2>Misión – Visión</h2>
-    <p>Somos ...</p>
-  </section>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#mision">Misión & Visión</a></li>
+      <li><a href="#quienes">Quiénes somos</a></li>
+      <li><a href="#paquetes">Paquetes</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <section id="quienes" class="section">
-    <h2>Quiénes somos</h2>
-    <p>Somos un equipo que ...</p>
-  </section>
+<section class="packages">
 
-  <section id="paquetes" class="section">
-    <h2>Paquetes</h2>
-    <p>Conoce nuestros servicios ...</p>
-  </section>
+  <div class="card">
+    <h2>💖 Álbum Digital (HIT)</h2>
+    <ul>
+      <li>Sube 1 foto especial</li>
+      <li>Escribe un mensaje desde el corazón</li>
+      <li>Firma con tu nombre</li>
+      <li>Link único para compartir</li>
+      <li>Página privada tipo sorpresa</li>
+    </ul>
+    <a href="album-form.html" class="btn">Crear mi Álbum</a>
+  </div>
 
-  <section id="contacto" class="section">
-    <h2>Contacto</h2>
-    <p>Escríbenos ...</p>
-  </section>
+  <div class="card">
+    <h2>💌 Carta Digital</h2>
+    <ul>
+      <li>Carta personalizada</li>
+      <li>Diseño romántico</li>
+      <li>Entrega por link</li>
+    </ul>
+    <a href="#" class="btn">Próximamente</a>
+  </div>
 
-  <footer class="footer">
-    © 2026 Detalles del Corazón 🩷
-  </footer>
+</section>
+
+<footer>
+  © 2026 Detalles del Corazón 🩷 · Momentos que hablan por ti
+</footer>
 
 </body>
 </html>
